@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "dayone_toolbox"
+
+
+class DayoneToolbox::CLI::Entry
+  desc "version", "Show version number"
+  def version
+    puts DayoneToolbox::VERSION
+  end
+end
+
+DayoneToolbox::CLI::Entry.start(ARGV)

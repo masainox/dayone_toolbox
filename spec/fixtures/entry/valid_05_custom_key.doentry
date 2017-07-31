@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Creation Date</key>
+	<date>2017-07-31T00:45:51Z</date>
+	<key>Creator</key>
+	<dict>
+		<key>Device Agent</key>
+		<string>Macintosh/MacBookPro11,3</string>
+		<key>Generation Date</key>
+		<date>2017-07-31T00:45:51Z</date>
+		<key>Host Name</key>
+		<string>mbpr</string>
+		<key>OS Agent</key>
+		<string>MacOS/10.11.6</string>
+		<key>Software Agent</key>
+		<string>Day One Mac/1.10.6</string>
+	</dict>
+	<key>Entry Text</key>
+	<string>Valid entry file 05.
+Testing for custom key.</string>
+	<key>Starred</key>
+	<false/>
+	<key>Tags</key>
+	<array>
+		<string>tag2</string>
+		<string>tag1</string>
+	</array>
+	<key>Time Zone</key>
+	<string>Asia/Tokyo</string>
+	<key>UUID</key>
+	<string>4DC0C3410FF14E2A82E4BD87C0CD28A8</string>
+	<key>CustomKey1</key>
+	<string>custom key string</string>
+</dict>
+</plist>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Creation Date</key>
+	<date>2017-07-14T15:57:35Z</date>
+	<key>Creator</key>
+	<dict>
+		<key>Device Agent</key>
+		<string>Macintosh/MacBookPro11,3</string>
+		<key>Generation Date</key>
+		<date>2017-07-14T15:57:35Z</date>
+		<key>Host Name</key>
+		<string>mbpr</string>
+		<key>OS Agent</key>
+		<string>MacOS/10.11.6</string>
+		<key>Software Agent</key>
+		<string>Day One Mac/1.10.6</string>
+	</dict>
+	<key>Entry Text</key>
+	<string>Hello World.</string>
+	<key>Location</key>
+	<dict>
+		<key>Administrative Area</key>
+		<string>山梨県</string>
+		<key>Country</key>
+		<string>日本</string>
+		<key>Latitude</key>
+		<real>35.363103498004143</real>
+		<key>Locality</key>
+		<string>南都留郡鳴沢村</string>
+		<key>Longitude</key>
+		<real>138.7304162979126</real>
+		<key>Place Name</key>
+		<string>富士山</string>
+		<key>Region</key>
+		<dict>
+			<key>Center</key>
+			<dict>
+				<key>Latitude</key>
+				<real>35.426641004270287</real>
+				<key>Longitude</key>
+				<real>138.69463000000002</real>
+			</dict>
+			<key>Radius</key>
+			<real>9162.5655160200331</real>
+		</dict>
+	</dict>
+	<key>Starred</key>
+	<true/>
+	<key>Tags</key>
+	<array/>
+	<key>Time Zone</key>
+	<string>Asia/Tokyo</string>
+	<key>UUID</key>
+	<string>21304A22FD874C29AC379AA317A18BC9</string>
+	<key>Weather</key>
+	<dict>
+		<key>Celsius</key>
+		<string>25</string>
+		<key>Description</key>
+		<string>Partly Cloudy</string>
+		<key>Fahrenheit</key>
+		<string>77</string>
+		<key>IconName</key>
+		<string>cloudyn.png</string>
+		<key>Pressure MB</key>
+		<integer>1012</integer>
+		<key>Relative Humidity</key>
+		<integer>89</integer>
+		<key>Service</key>
+		<string>HAMweather</string>
+		<key>Sunrise Date</key>
+		<date>2017-07-13T19:37:48Z</date>
+		<key>Sunset Date</key>
+		<date>2017-07-14T09:58:45Z</date>
+		<key>Visibility KM</key>
+		<real>16.093440000000001</real>
+		<key>Wind Bearing</key>
+		<integer>170</integer>
+		<key>Wind Chill Celsius</key>
+		<integer>25</integer>
+		<key>Wind Speed KPH</key>
+		<integer>15</integer>
+	</dict>
+</dict>
+</plist>
