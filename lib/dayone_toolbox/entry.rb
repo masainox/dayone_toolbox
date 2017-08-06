@@ -1,4 +1,5 @@
 
+require 'pathname'
 require 'plist'
 
 class DayoneToolbox::Entry
@@ -28,9 +29,13 @@ class DayoneToolbox::Entry
   end
 
 
-  attr_reader :file
+  attr_reader :file, :journal_dir
   def initialize(file)
     @file = file
+    @journal_dir = nil
+    Pathname.new(file).ascend do |v|
+      @journal_dir =  v.expand_path.to_s if v.basename.to_s.match('.dayone')
+    end
     @hash = Plist.parse_xml(file)
   end
 
@@ -81,6 +86,14 @@ class DayoneToolbox::Entry
   def weather=(attr) ; @hash[KEY_WEATHER] = attr ; end
   def weather? ; @hash.has_key?(KEY_WEATHER) ; end
 
+  def photo
+    jpg = File.join(@journal_dir, "photos/#{uuid}.jpg")
+    File.exist?(jpg) ? jpg.to_s : nil
+  end
+
+  def photo?
+    photo ? true : false
+  end
 
   def custom_key(key)
     @hash[key]

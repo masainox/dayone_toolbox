@@ -32,4 +32,17 @@ RSpec.describe DayoneToolbox::Journal do
     end
   end
 
+
+  describe '#photos' do
+    context 'valid params' do
+      before do
+        @photos = DayoneToolbox::Journal.new(valid_journal_file_02).photos
+      end
+
+      it { expect(@photos.class).to be Array }
+      it { expect(@photos.size).to eq 2 }
+      it { expect(@photos[0]).to eq File.join(valid_journal_file_02, 'photos/34B99269E5AB4613A3F4D827A2A466EE.jpg') }
+    end
+  end
+
 end
