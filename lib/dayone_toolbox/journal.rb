@@ -11,6 +11,10 @@ class DayoneToolbox::Journal
   end
 
   def entries
-    Dir.glob("#{@entries_path}**/*.doentry")
+    Dir.glob("#{@entries_path}**/*.doentry", File::FNM_CASEFOLD)
+  end
+
+  def photos
+    Dir.glob("#{@photos_path}**/*.jpg", File::FNM_CASEFOLD)
   end
 end

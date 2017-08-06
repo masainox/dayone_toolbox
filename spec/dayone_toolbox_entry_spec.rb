@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe DayoneToolbox::Entry do
 
   describe '.new' do
-    context 'valid file and valid params' do
+    context 'valid file and valid params 01' do
       subject do
         DayoneToolbox::Entry.new(valid_entry_file_01)
       end
@@ -36,6 +36,31 @@ RSpec.describe DayoneToolbox::Entry do
 
       it { expect(subject.weather).to be nil }
       it { expect(subject.weather?).to be false }
+    end
+  end
+
+
+  describe '#photos and #photos?' do
+    context 'valid file 06, with photo file' do
+      before do
+        @entry = DayoneToolbox::Entry.new(valid_entry_file_06)
+        @expand_journal_path = File.expand_path(valid_journal_file_02)
+      end
+
+      it { expect(@entry.journal_dir).to eq @expand_journal_path }
+      it { expect(@entry.photo).to eq File.join(@expand_journal_path, 'photos/DC2245B372BA41D6A4BA6CF323D38E89.jpg' ) }
+      it { expect(@entry.photo?).to be true }
+    end
+
+    context 'valid file 07, with photo file' do
+      before do
+        @entry = DayoneToolbox::Entry.new(valid_entry_file_07)
+        @expand_journal_path = File.expand_path(valid_journal_file_02)
+      end
+
+      it { expect(@entry.journal_dir).to eq @expand_journal_path }
+      it { expect(@entry.photo).to eq nil }
+      it { expect(@entry.photo?).to be false }
     end
   end
 
