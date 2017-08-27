@@ -1,7 +1,4 @@
 
-require 'pathname'
-require 'plist'
-
 class DayoneToolbox::Entry
   KEY_TAGS = 'Tags'
   KEY_UUID = 'UUID'
@@ -31,12 +28,12 @@ class DayoneToolbox::Entry
 
   attr_reader :file, :journal_dir
   def initialize(file)
-    @file = file
+    @file = File.expand_path(file)
     @journal_dir = nil
     Pathname.new(file).ascend do |v|
       @journal_dir =  v.expand_path.to_s if v.basename.to_s.match('.dayone')
     end
-    @hash = Plist.parse_xml(file)
+    @hash = Plist.parse_xml(@file)
   end
 
 
@@ -87,7 +84,7 @@ class DayoneToolbox::Entry
   def weather? ; @hash.has_key?(KEY_WEATHER) ; end
 
   def photo
-    jpg = File.join(@journal_dir, "photos/#{uuid}.jpg")
+    jpg = File.join("#{@journal_dir}", "photos/#{uuid}.jpg")
     File.exist?(jpg) ? jpg.to_s : nil
   end
 
