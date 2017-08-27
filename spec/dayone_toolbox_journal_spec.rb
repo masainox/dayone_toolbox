@@ -3,17 +3,36 @@ require 'spec_helper'
 RSpec.describe DayoneToolbox::Journal do
 
   describe '.new' do
-    context 'valid params' do
-      got_entries_path = File.join(valid_journal_file_01, 'entries/')
-      got_photos_path = File.join(valid_journal_file_01, 'photos/')
-
-      subject do
-        DayoneToolbox::Journal.new(valid_journal_file_01)
+    context 'valid params 01' do
+      before do
+        journal_path = './spec/fixtures/journal/valid_journal_01.dayone'
+        @expect_expand_path = File.expand_path(journal_path)
+        @expect_entries_path = File.join(valid_journal_file_01, 'entries/')
+        @expect_photos_path = File.join(valid_journal_file_01, 'photos/')
+        @target = DayoneToolbox::Journal.new(journal_path)
       end
 
-      it { expect(subject.entries_path).to eq got_entries_path }
-      it { expect(subject.photos_path).to eq got_photos_path }
+      it { expect(@target.entries_path).to eq @expect_entries_path }
+      it { expect(@target.photos_path).to eq @expect_photos_path }
+      it { expect(@target.expand_path).to eq @expect_expand_path }
+
     end
+
+
+    context 'valid params 02 expand path' do
+      before do
+        @expect_expand_path = valid_journal_file_01
+        @expect_entries_path = File.join(valid_journal_file_01, 'entries/')
+        @expect_photos_path = File.join(valid_journal_file_01, 'photos/')
+        @target = DayoneToolbox::Journal.new(valid_journal_file_01)
+      end
+
+      it { expect(@target.entries_path).to eq @expect_entries_path }
+      it { expect(@target.photos_path).to eq @expect_photos_path }
+      it { expect(@target.expand_path).to eq @expect_expand_path }
+
+    end
+
   end
 
 
